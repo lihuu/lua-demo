@@ -1,8 +1,8 @@
 #!/usr/local/bin/lua
 --以只读模式打开文件
-file=io.open("HelloWorld.lua","r")
+local file=io.open("HelloWorld.lua","r")
 io.input(file)
-str = io.read()
+local str = io.read()
 print(str)
 while(str~=nil) do
     str = io.read()
