@@ -9,6 +9,9 @@ local t1 ={}
 setmetatable(t,t1)
 print(getmetatable(t))
 
+--连接成字符串打印输出
+print(table.concat(t,","))
+
 
 
 
@@ -77,14 +80,6 @@ for k,v in ipairs(t) do
     print(k,v)
 end
 --]]
-
-
-
-
-
-
-
-
 
 
 
