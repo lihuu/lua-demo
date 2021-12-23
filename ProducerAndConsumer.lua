@@ -1,8 +1,8 @@
 #!/usr/local/bin/lua
-queue = {}
-count=0;
+local queue = {}
+local count=0;
 
-producer = coroutine.create(function()
+local producer = coroutine.create(function()
     print("producer running")
     while true do 
         print("aaa")
@@ -13,14 +13,14 @@ producer = coroutine.create(function()
         count=count+1
         coroutine.resume(consumer)
         coroutine.yield()
-        if count >=10 then 
+        if count >=10 then
             break
         end
-    end 
+    end
 end)
 
 
-consumer = coroutine.create(function()
+local consumer = coroutine.create(function()
     print("consumer running")
     while true do 
         while #queue > 0 do
