@@ -1,3 +1,8 @@
+local myUtil = require('./util/init')
+print(myUtil.isEmpty("3"))
+print(myUtil.isEmpty(""))
+print(myUtil.isEmpty(nil))
+
 --单行字符串
 local myString = "My String"
 --

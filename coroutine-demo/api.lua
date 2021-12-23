@@ -16,6 +16,3 @@ result,v = coroutine.resume(co);
 print(result)
 print(v)
 
-
-
-
