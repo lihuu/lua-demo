@@ -20,3 +20,6 @@ print(string.lower(myString))
 
 --字符串的连接
 print(myString .. myString1)
+
+--计算字符串的长度
+print(#"hello")
