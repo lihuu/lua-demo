@@ -10,7 +10,9 @@ end
 -- _G._G 等价于_G
 --
 -- 全局的应该用大写的字母开头
-function GlobalFunction() print("This is my first global functon") end
+function GlobalFunction()
+  print("This is my first global functon")
+end
 
 print(_G.GlobalFunction)
 
@@ -20,6 +22,8 @@ print(_G)
 print(_G._G)
 
 -- 局部的变量不会放到_G表中
-local function myLocalFunction() print("This is my local function") end
+local function myLocalFunction()
+  print("This is my local function")
+end
 myLocalFunction()
 

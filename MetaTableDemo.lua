@@ -2,42 +2,60 @@ local Set = {}
 local mt = {}
 
 function Set.new(l)
-    local set = {}
-    setmetatable(set, mt)
-    for _, v in ipairs(l) do set[v] = true end
-    return set
+  local set = {}
+  setmetatable(set, mt)
+  for _, v in ipairs(l) do
+    set[v] = true
+  end
+  return set
 end
 
 function Set.union(a, b)
-    local set = {}
-    setmetatable(set, mt)
-    for k in pairs(a) do set[k] = true end
-    for k in pairs(b) do set[k] = true end
-    return set
+  local set = {}
+  setmetatable(set, mt)
+  for k in pairs(a) do
+    set[k] = true
+  end
+  for k in pairs(b) do
+    set[k] = true
+  end
+  return set
 end
 
 function Set.intersection(a, b)
-    local res = Set.new({})
-    for k in pairs(a) do res[k] = b[k] end
-    return res
+  local res = Set.new({})
+  for k in pairs(a) do
+    res[k] = b[k]
+  end
+  return res
 end
 
 function Set.tostring(a)
-    local l = {}
-    for e in pairs(a) do l[#l + 1] = tostring(e) end
-    return "{" .. table.concat(l, ', ') .. "}"
+  local l = {}
+  for e in pairs(a) do
+    l[#l + 1] = tostring(e)
+  end
+  return "{" .. table.concat(l, ', ') .. "}"
 end
 
 mt.__add = Set.union
 
 mt.__le = function(a, b)
-    for k in pairs(a) do if not b[k] then return false end end
-    return true
+  for k in pairs(a) do
+    if not b[k] then
+      return false
+    end
+  end
+  return true
 end
 
-mt.__lt = function(a, b) return a <= b and not (b <= a) end
+mt.__lt = function(a, b)
+  return a <= b and not (b <= a)
+end
 
-mt.__eq = function(a, b) return a <= b and b <= a end
+mt.__eq = function(a, b)
+  return a <= b and b <= a
+end
 
 mt.__tostring = Set.tostring
 

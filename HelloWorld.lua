@@ -38,27 +38,35 @@ print(tab1)
 print(pairs)
 
 -- 这个是for循环的格式, 这个真的有脚本语言的味道了，还有for循环的输出好像并不是按照顺序的
-for k, v in pairs(tab1) do print(k .. "-" .. v) end
+for k, v in pairs(tab1) do
+  print(k .. "-" .. v)
+end
 
-function print_table(t) for k, v in pairs(t) do print(k .. ":" .. v) end end
+function print_table(t)
+  for k, v in pairs(t) do
+    print(k .. ":" .. v)
+  end
+end
 
 -- 将对应的值设置为nil就表示删除这个值了
 tab1.name = nil
-for k, v in pairs(tab1) do print(k .. "-" .. v) end
+for k, v in pairs(tab1) do
+  print(k .. "-" .. v)
+end
 
 -- boolean 类型的例子
 isTrue = false
 
 if isTrue then
-    print('value is true')
+  print('value is true')
 else
-    print('value is false')
+  print('value is false')
 end
 
 if not nil then
-    print('nil is false')
+  print('nil is false')
 else
-    print('nil is true')
+  print('nil is true')
 end
 
 -- number 类型的例子
@@ -104,13 +112,19 @@ tb3["p"] = 234
 print_table(tb3)
 
 -- 函数是一等公民，这个不用说了吧，和javascript的语法比较类似
-function add(a, b) return a + b end
+function add(a, b)
+  return a + b
+end
 
-function action(a, fun) return a + fun(a) end
+function action(a, fun)
+  return a + fun(a)
+end
 
 print(add(1, 2))
 
-print(action(1, function(a) return a + 1 end))
+print(action(1, function(a)
+  return a + 1
+end))
 
 -- thread lua 中的线程是协程，它和线程差不多，有自己的独立的栈，局部变量和指令指针，可以和其他协程共享
 -- 全局变量和其他大部分东西
@@ -124,23 +138,27 @@ userdata 是一种用户自定义数据，用于表示一种由应用程序或 C
 a = 10
 
 while (a < 20) do
-    print(a)
-    a = a + 1
+  print(a)
+  a = a + 1
 end
 
 -- 这个for循环就比较诡异了
-for i = 1, 10, 2 do print(i) end
+for i = 1, 10, 2 do
+  print(i)
+end
 
 -- 泛型for循环
-for k, v in pairs(tb3) do print(k .. ":" .. v) end
+for k, v in pairs(tb3) do
+  print(k .. ":" .. v)
+end
 
 -- 还有repeat循环，这个就没有什么意思啦
 -- \
 --
 
 repeat
-    print(a)
-    a = a - 1
+  print(a)
+  a = a - 1
 until (a < 0)
 
 -- 这货居然也有break语句，不用说了就可其他的语言是一样的
@@ -150,14 +168,16 @@ local a = 1
 ::label::
 
 a = a + 1
-if a < 3 then goto label end
+if a < 3 then
+  goto label
+end
 
 -- 还有函数，居然是支持多个返回值的
 --
 function multi_return()
-    local a = 1
-    local b = 1
-    return a, b
+  local a = 1
+  local b = 1
+  return a, b
 end
 
 print(type(multi_return()))

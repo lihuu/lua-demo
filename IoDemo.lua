@@ -6,8 +6,8 @@ io.input(file)
 local str = io.read()
 print(str)
 while (str ~= nil) do
-    str = io.read()
-    print(str)
+  str = io.read()
+  print(str)
 end
 
 io.close(file)
@@ -19,7 +19,9 @@ io.close(file)
 
 -- file = io.open("utils.lua","r")
 
-for line in io.lines("utils.lua") do print(line) end
+for line in io.lines("utils.lua") do
+  print(line)
+end
 
 file = io.open("utils.lua", "r")
 print(file:read())
