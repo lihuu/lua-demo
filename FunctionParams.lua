@@ -1,5 +1,4 @@
-
-local function testParam (...)
+local function testParam(...)
     print({...})
     for key, value in ipairs({...}) do
         print(key)
@@ -7,9 +6,5 @@ local function testParam (...)
     end
 end
 
-testParam(1,2)
-
-
-
-
+testParam(1, 2)
 

@@ -1,12 +1,7 @@
-function test() 
-    return 1
-end
+function test() return 1 end
 
-local result,a = pcall(test)
+local result, a = pcall(test)
 
 print(result)
 print(a)
-
-
-
 

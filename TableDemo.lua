@@ -1,21 +1,19 @@
 #!/usr/local/bin/lua
+
 require('utils')
-local t = {10,20,30}
-table.insert(t,1,5)
+local t = {10, 20, 30}
+table.insert(t, 1, 5)
 
 print(getmetatable(t))
 
-local t1 ={}
-setmetatable(t,t1)
+local t1 = {}
+setmetatable(t, t1)
 print(getmetatable(t))
 
---连接成字符串打印输出
-print(table.concat(t,","))
+-- 连接成字符串打印输出
+print(table.concat(t, ","))
 
-
-
-
---utils.print_table(t)
+-- utils.print_table(t)
 --
 --[[
 local foo = function (x)
@@ -37,15 +35,14 @@ utils.print_table(getmetatable(fruits))
 print(fruits)
 --]]
 
+-- local a = {}
+-- a['k'] = 10
 
---local a = {}
---a['k'] = 10
+-- utils.print_table(a)
 
---utils.print_table(a)
-
---print(a['k'])
---#region
---#region
+-- print(a['k'])
+-- #region
+-- #region
 --[[
 local alph = {A='a',B='b',C='c'}
 --print(alph.A)
@@ -80,6 +77,4 @@ for k,v in ipairs(t) do
     print(k,v)
 end
 --]]
-
-
 

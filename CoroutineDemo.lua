@@ -8,48 +8,38 @@ coroutine.status()	查看 coroutine 的状态
 注：coroutine 的状态有三种：dead，suspended，running，具体什么时候有这样的状态请参考下面的程序
 coroutine.wrap（）	创建 coroutine，返回一个函数，一旦你调用这个函数，就进入 coroutine，和 create 功能重复
 coroutine.running()	返回正在跑的 coroutine，一个 coroutine 就是一个线程，当使用running的时候，就是返回一个 corouting 的线程号
---]]
-local co = coroutine.create(
-function(i) 
+--]] local co = coroutine.create(function(i)
     print(i);
     print("coroutine running")
-end
-)
+end)
 
-coroutine.resume(co,1)
+coroutine.resume(co, 1)
 
 print(coroutine.status(co))
 
 print('------------')
 
-local co = coroutine.wrap(
-    function(i)
-        print(i)
-    end
-)
+local co = coroutine.wrap(function(i) print(i) end)
 
 co(1)
 
-local co2 = coroutine.create(
-    function()
-        for i=1,10 do
-            print(i)
-            if i == 3 then
-                print(coroutine.status(co2))  --running
-                print(coroutine.running()) --thread:XXXXXX
-            end
-            coroutine.yield()
+local co2 = coroutine.create(function()
+    for i = 1, 10 do
+        print(i)
+        if i == 3 then
+            print(coroutine.status(co2)) -- running
+            print(coroutine.running()) -- thread:XXXXXX
         end
+        coroutine.yield()
     end
-)
+end)
 
-coroutine.resume(co2) --1
-coroutine.resume(co2) --2
-coroutine.resume(co2) --3
+coroutine.resume(co2) -- 1
+coroutine.resume(co2) -- 2
+coroutine.resume(co2) -- 3
 
-print(coroutine.status(co2))   -- suspended
+print(coroutine.status(co2)) -- suspended
 print(coroutine.running())
 
 print("----------")
-
 
