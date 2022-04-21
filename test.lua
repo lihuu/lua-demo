@@ -18,18 +18,19 @@ function string.split(str, delimiter)
 end
 
 local split_result = line:split(": ")
-
+print("-----------------------------")
 print(split_result[1])
 print(split_result[2])
+print("-----------------------------")
 
 local result = line:gsub("-", "_")
 
 print(result)
 
-local test_table = {}
+-- local test_table = {}
 
-test_table["aa"] = 123
+-- test_table["aa"] = 123
 
-print(test_table["aa"])
+-- print(test_table["aa"])
 
 
