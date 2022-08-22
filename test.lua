@@ -33,4 +33,9 @@ print(result)
 
 -- print(test_table["aa"])
 
+local a = 0
+
+if a then
+  print("AAAAAAA")
+end
 
