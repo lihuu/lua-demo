@@ -27,3 +27,11 @@ else
   print("index is nil or value is nil")
 end
 
+local ip = '192.168.2.21'
+
+local grey_ip = '192.168.2.21'
+
+if ip == grey_ip then
+  print("Ip equals")
+end
+
