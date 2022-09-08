@@ -1,4 +1,4 @@
-local exist = redis.call('exist', KEYS[1]);
+local exist = redis.call('exists', KEYS[1]);
 if exist == 1 then
   local limitCount = redis.call('get', KEYS[2]);
   if limitCount < KEYS[3] then
