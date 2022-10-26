@@ -1,15 +1,16 @@
 #!/usr/local/bin/lua
 
-luasql = require "luasql.mysql"
-env = luasql.mysql()
-conn = env:connect("test", "root", "root", "127.0.0.1", 3306)
+local luasql = require "luasql.mysql"
+local env = luasql.mysql()
+local conn = env:connect("test", "root", "root", "127.0.0.1", 3306)
 
-cur = conn:execute("select * from Customers")
-row = cur:fetch({}, "a")
+local cur = conn:execute("select * from Customers")
+local row = cur:fetch({}, "a")
 while row do
-  var = string.format("%d %s \n", row.Id, row.Name)
+  local var = string.format("%d %s \n", row.Id, row.Name)
   print(var)
   row = cur:fetch(row, "a")
 end
 conn:close()
 env:close()
+
