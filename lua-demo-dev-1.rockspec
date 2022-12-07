@@ -1,0 +1,51 @@
+package = "lua-demo"
+version = "dev-1"
+source = {
+   url = "git+https://github.com/lihuu/lua-demo.git"
+}
+description = {
+   summary = "##### lua 的简单的语法",
+   detailed = "##### lua 的简单的语法",
+   homepage = "https://github.com/lihuu/lua-demo",
+   license = "*** please specify a license ***"
+}
+build = {
+   type = "builtin",
+   modules = {
+      ArrayDemo = "src/ArrayDemo.lua",
+      BoolDemo = "src/BoolDemo.lua",
+      CoroutineDemo = "src/CoroutineDemo.lua",
+      FunctionParams = "src/FunctionParams.lua",
+      GlobalVariable = "src/GlobalVariable.lua",
+      HelloWorld = "src/HelloWorld.lua",
+      IoDemo = "src/IoDemo.lua",
+      ListDemo = "src/ListDemo.lua",
+      MetaTableDemo = "src/MetaTableDemo.lua",
+      MetaTableSimpleDemo = "src/MetaTableSimpleDemo.lua",
+      MysqlAccess = "src/MysqlAccess.lua",
+      ProducerAndConsumer = "src/ProducerAndConsumer.lua",
+      PrototypeDemo = "src/PrototypeDemo.lua",
+      StringDemo = "src/StringDemo.lua",
+      TableDemo = "src/TableDemo.lua",
+      ["coroutine-demo.ProducerAndComsumerDemo"] = "src/coroutine-demo/ProducerAndComsumerDemo.lua",
+      ["coroutine-demo.api"] = "src/coroutine-demo/api.lua",
+      ["lua-program-book-demo.hello"] = "src/lua-program-book-demo/hello.lua",
+      ["lua-program-book-demo.hello-world"] = "src/lua-program-book-demo/hello-world.lua",
+      ["lua-program-book-demo.print-script-name"] = "src/lua-program-book-demo/print-script-name.lua",
+      ["lua-program-book-demo.string-demo"] = "src/lua-program-book-demo/string-demo.lua",
+      pcallDemo = "src/pcallDemo.lua",
+      ["redis-better-decr"] = "src/redis-better-decr.lua",
+      ["redis-better-incr"] = "src/redis-better-incr.lua",
+      ["redis-better-lock-ticket"] = "src/redis-better-lock-ticket.lua",
+      ["redis-better-set-ticket"] = "src/redis-better-set-ticket.lua",
+      ["redis-cjson-decode-demo"] = "src/redis-cjson-decode-demo.lua",
+      ["redis-cjson-encode-demo"] = "src/redis-cjson-encode-demo.lua",
+      ["redis-free-lock"] = "src/redis-free-lock.lua",
+      ["redis-get-ticket"] = "src/redis-get-ticket.lua",
+      ["redis-lock-ticket"] = "src/redis-lock-ticket.lua",
+      ["redis-remove-ticket"] = "src/redis-remove-ticket.lua",
+      ["redis-set-ticket"] = "src/redis-set-ticket.lua",
+      ["util.init"] = "src/util/init.lua",
+      utils = "src/utils.lua"
+   }
+}
