@@ -191,3 +191,7 @@ print(string.upper(str))
 print(str)
 print("Hello,world")
 
+print(tonumber("-1"))
+print(type(tonumber("-1")))
+
+
