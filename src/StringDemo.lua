@@ -39,3 +39,8 @@ print(string.upper("hello"))
 -- 负号表示从最后开始
 print(string.sub("hello", 2, -2))
 
+-- 字符串format
+print(string.format("x = %d y=%d", 10, 20))
+
+print(string.format("x = %x", 200))
+
