@@ -1,6 +1,6 @@
 #!/usr/local/bin/lua
 
-require 'utils'
+local utils = require 'utils'
 print(utils)
 -- 这个是单行的注释
 --[[
@@ -11,12 +11,13 @@ print(utils)
 print("hello,world")
 
 -- 默认的情况下变量总是全局的，变量名的规则和其他的编程语言是一样的，另外注意不要使用lua的保留关键字
-b = 10
+-- 不要使用全局的变量
+local b = 10
 print(b)
 
 -- 删除变量值将变量设置为nil
 
-b = nil
+local b = nil
 print(b)
 
 -- lua有8个基本的数据类型，nil boolean number string userdata function thread table 
@@ -33,7 +34,7 @@ print(type(nil))
 
 -- table 类似于java中的HashMap
 
-tab1 = {name = "silent", age = 1}
+local tab1 = {name = "silent", age = 1}
 print(tab1)
 print(pairs)
 
@@ -42,7 +43,7 @@ for k, v in pairs(tab1) do
   print(k .. "-" .. v)
 end
 
-function print_table(t)
+local function print_table(t)
   for k, v in pairs(t) do
     print(k .. ":" .. v)
   end
@@ -167,17 +168,17 @@ until (a < 0)
 local a = 1
 ::label::
 
-a = a + 1
+local a = a + 1
 if a < 3 then
   goto label
 end
 
 -- 还有函数，居然是支持多个返回值的
 --
-function multi_return()
-  local a = 1
-  local b = 1
-  return a, b
+local function multi_return(first,second)
+  --local a = 1
+  --local b = 1
+  return first,second
 end
 
 print(type(multi_return()))
@@ -186,7 +187,7 @@ a, b = multi_return()
 -- 可变参会就不用说了，显然print函数就是可变参数的，相信你已经看出来了
 print(a, b)
 
-str = "Hello,world"
+local str = "Hello,world"
 print(string.upper(str))
 print(str)
 print("Hello,world")
