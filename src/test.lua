@@ -2,19 +2,19 @@ local line = "Content-Type: application/json;"
 print(line)
 
 for w in string.gmatch(line, "[%a-/]+") do
-  print(w)
+	print(w)
 end
 
 function string.split(str, delimiter)
-  if str == nil or str == '' or delimiter == nil then
-    return nil
-  end
+	if str == nil or str == "" or delimiter == nil then
+		return nil
+	end
 
-  local result = {}
-  for match in (str .. delimiter):gmatch("(.-)" .. delimiter) do
-    table.insert(result, match)
-  end
-  return result
+	local result = {}
+	for match in (str .. delimiter):gmatch("(.-)" .. delimiter) do
+		table.insert(result, match)
+	end
+	return result
 end
 
 local split_result = line:split(": ")
@@ -36,6 +36,11 @@ print(result)
 local a = 0
 
 if a then
-  print("AAAAAAA")
+	print("AAAAAAA")
 end
 
+if vim then
+	-- vim.print(package.loaded)
+	--vim.print(vim.api.nvim__get_runtime())
+	print(vim.fn.expand("$VIMRUNTIME/lua"))
+end
