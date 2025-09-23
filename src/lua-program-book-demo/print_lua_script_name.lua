@@ -59,5 +59,17 @@ ar[2] = nil
 ar[3] = 3
 ar[4] = 4
 
-print(#ar) -- 1
+print(#ar)
 
+local function multiParams(...)
+	local tab = table.pack(...)
+	print(tab)
+	local result = { 2, 3, 4, 5 }
+	return table.unpack(result)
+end
+
+local resTab = table.pack(multiParams(1, 2, 3, 4, 5))
+
+for index, value in ipairs(resTab) do
+	print(index, value)
+end
